@@ -1,3 +1,5 @@
+import vuetify from "./vuetify";
+
 require('./bootstrap');
 
 import { createApp, h } from 'vue';
@@ -12,6 +14,7 @@ createInertiaApp({
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
             .use(plugin)
+            .use(vuetify)
             .mixin({ methods: { route } })
             .mount(el);
     },
